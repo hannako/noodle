@@ -7,4 +7,7 @@ class ApplicationController < ActionController::Base
     authenticate_admin!(:force => true)
   end
 
+  def after_sign_in_path_for(resource)
+    new_noodle_path
+  end
 end
