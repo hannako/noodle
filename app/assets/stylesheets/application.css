@@ -13,3 +13,72 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background: url(bluebell.jpeg);
+  background-size: cover;
+}
+
+h1 {
+  font-size: 90px;
+  text-align: center;
+  padding-bottom: 0px;
+  font-family: "Raleway dots";
+  color: white;
+
+  background: rgba(255, 255, 255, 0.0);
+
+}
+
+h2 {
+  font-size: 40px;
+  font-family: "Raleway";
+  color: white;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: "Bitter";
+  color: green;
+
+}
+
+.navbar-brand{
+  font-family: "Raleway Dots";
+  font-size: 30px;
+}
+
+.alert{
+  font-family: "Raleway";
+  font-size: 25px;
+
+  color: white;
+  text-align: center;
+}
+
+.notice{
+  font-family: "Raleway";
+  font-size: 25px;
+
+  color: white;
+  text-align: center;
+}
+
+.jumbotron{
+  background-color: rgba(255, 255, 255, 0.0);
+  border: white;
+  border-style: dotted;
+}
+
+.navbar {
+  font-family: "Raleway";
+  font-size: 25px;
+  text-align: right;
+  height: 5px;
+
+}
+
+/* forms */
+.field {
+  font-size: 30px;
+}

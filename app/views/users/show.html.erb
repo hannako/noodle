@@ -1,0 +1,17 @@
+users show
+
+<h2><%=@user.email %></h2>
+<br />
+  <%if @user.profile%>
+    <%=@user.profile.address_line_one%>
+    <br />
+    <%=@user.profile.address_line_two%>
+    <br />
+    <%=@user.profile.address_line_three%>
+    <br />
+    <%=@user.profile.address_post_code%>
+    <br />
+    <%=@user.profile.birthday%>
+  <%else%>
+    <h3><%=@user.email %> hasm't added profile info yet</h3>
+  <%end%>

@@ -1,0 +1,18 @@
+<h1>My Profile</h1>
+
+<%if (@profile.address_line_one.nil?) && (@profile.address_line_two.nil?)%>
+
+  <h2>Please add your profile information</h2>
+
+  <%=link_to 'Create my profile', new_user_profile_path(current_user)%>
+<%else%>
+  <h2>Address:</h2>
+  <br />
+  <%=@profile.address_line_one%>
+  <br />
+  <%=@profile.address_line_two%>
+  <br />
+  <%=@profile.address_line_three%>
+  <br />
+  <%=@profile.address_post_code%>
+<%end%>

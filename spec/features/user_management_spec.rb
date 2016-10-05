@@ -24,11 +24,15 @@ feature 'User Management' do
       expect(page).to have_link 'Send Invitation'
     end
 
+    scenario 'I can log out from anywhere on the site' do
+      sign_up
+      expect(page).to have_link 'Admin sign out'
+    end
   end
 
   context 'As an invited user' do
 
-    scenario 'I can log into my account, but I cannot invite users' do
+    scenario 'I can log into my account, I can sign out, I cannot invite users' do
 
       user = create(:user)
 
@@ -39,7 +43,9 @@ feature 'User Management' do
       click_button 'Log in'
       expect(page).to have_content 'Signed in successfully.'
       expect(page).not_to have_link 'Send Invitation'
+      expect(page).to have_link 'User sign out'
     end
   end
-  
+
+
 end

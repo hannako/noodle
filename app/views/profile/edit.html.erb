@@ -1,0 +1,23 @@
+<%= form_for @profile, url: {action: "update"} do |f| %>
+  <div class="field">
+    <%= f.label :address_line_one %>
+    <%= f.text_field :address_line_one %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_two %>
+    <%= f.text_field :address_line_two %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_three %>
+    <%= f.text_field :address_line_three %>
+  </div>
+  <div class='field'>
+    <%= f.label :post_code %>
+    <%= f.text_field :address_post_code %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %>
+    <%= f.datetime_select :birthday%>
+  </div>
+  <%= f.submit "Update" %>
+<%end%>

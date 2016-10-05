@@ -1,12 +1,16 @@
-<h1>Welcome to Noodle</h1>
+<div class = "container">
 
-Already a Noodler?:
-<%= link_to 'Log in as user', new_user_session_path %>
-<%= link_to 'Log in as admin', new_admin_session_path %>
-<br />
-<br />
+  <h1>Welcome to Noodle</h1>
 
-New to Noodle?:
-<%= link_to 'Create a Noodle Group', new_admin_registration_path %>
-<br />
-<br />
+    <div class = "jumbotron">
+      <h2>Already a Noodler?</h2>
+      <%= link_to 'Log in as user', new_user_session_path %>
+      <%= link_to 'Log in as admin', new_admin_session_path %>
+    </div>
+
+    <div class = "jumbotron">
+      <h2>New to Noodle?</h2>
+      <%= link_to 'Create a Noodle Group', new_admin_registration_path %>
+    </div>
+
+</div>

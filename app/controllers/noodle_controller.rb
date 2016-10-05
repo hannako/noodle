@@ -6,7 +6,7 @@ class NoodleController < ApplicationController
   end
 
   def new
-
+    @users = User.all
   end
 
 

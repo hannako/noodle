@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+  invitations: "invitations"
+}
   devise_for :admins
 
-  resources :noodle
+  resources :noodle do
+    resources :users, shallow: true do
+      resources :profile
+    end
+
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

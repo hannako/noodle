@@ -2,23 +2,38 @@
 <html>
 <head>
   <title>Noodle</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Raleway|Raleway+Dots" rel="stylesheet">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class = "container">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-<%if user_signed_in? %>
-  <%= link_to 'User sign out', destroy_user_session_path, method: :delete %>
-<%end%>
+    <nav class="navbar navbar-default">
+        <a class="navbar-brand" href="/">Noodle</a>
+            <%if user_signed_in? %>
+                <div class="navbar">
+                  <%= link_to 'User sign out', destroy_user_session_path, method: :delete%>
+                  Welcome <%=current_user.username%>
+                  <%= link_to 'My profile', profile_path(current_user) %>
+                </div>
+            <%end%>
+            <%if admin_signed_in? %>
+              <div class="navbar">
+                <%= link_to 'Admin sign out', destroy_admin_session_path, method: :delete %>
+                Welcome <%=current_admin.email%>
+              </div>
+            <%end%>
+    </nav>
+    <%= yield %>
 
-<%if admin_signed_in? %>
-  <%= link_to 'Admin sign out', destroy_admin_session_path, method: :delete %>
-<%end%>
+  </div>
 
-<%= yield %>
 
 </body>
 </html>
