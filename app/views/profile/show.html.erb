@@ -6,13 +6,12 @@
 
   <%=link_to 'Create my profile', new_user_profile_path(current_user)%>
 <%else%>
+  <div class = jumbotron>
   <h2>Address:</h2>
-  <br />
-  <%=@profile.address_line_one%>
-  <br />
-  <%=@profile.address_line_two%>
-  <br />
-  <%=@profile.address_line_three%>
-  <br />
-  <%=@profile.address_post_code%>
+  <h3><%=@profile.address_line_one%></h3>
+  <h3><%=@profile.address_line_two%></h3>
+  <h3><%=@profile.address_line_three%></h3>
+  <h3><%=@profile.address_post_code%></h3>
+  <%=button_to 'Update this profile', edit_profile_path(@profile), :method=>:get, :class=>'button'%>
+</div>
 <%end%>

@@ -14,18 +14,21 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <nav class="navbar navbar-default">
-        <a class="navbar-brand" href="/">Noodle</a>
+    <nav class="navbar-default">
+      <%=link_to 'Noodle', root_path, {:class=>"logo" } %>
+          <div class="navbar-right">
             <%if user_signed_in? %>
-                <div class="navbar">
-                  <%= link_to 'User sign out', destroy_user_session_path, method: :delete%>
-                  Welcome <%=current_user.username%>
-                  <%= link_to 'My profile', profile_path(current_user) %>
-                </div>
+              Welcome <%=current_user.username%>
+              <%=link_to 'My profile', profile_path(current_user) %>
+              <%=link_to 'My group', new_noodle_path%>
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
+
+          </div>
+
             <%end%>
             <%if admin_signed_in? %>
               <div class="navbar">
-                <%= link_to 'Admin sign out', destroy_admin_session_path, method: :delete %>
+                <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
                 Welcome <%=current_admin.email%>
               </div>
             <%end%>

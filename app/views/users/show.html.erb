@@ -1,6 +1,6 @@
 users show
 
-<h2><%=@user.email %></h2>
+<h2><%=@user.username %></h2>
 <br />
   <%if @user.profile%>
     <%=@user.profile.address_line_one%>
@@ -13,5 +13,5 @@ users show
     <br />
     <%=@user.profile.birthday%>
   <%else%>
-    <h3><%=@user.email %> hasm't added profile info yet</h3>
+    <h3><%=@user.username %> hasn't added profile info yet</h3>
   <%end%>

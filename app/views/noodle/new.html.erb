@@ -1,15 +1,5 @@
-new noodle path
-
 <%if admin_signed_in? %>
   <%= link_to 'Send Invitation', new_user_invitation_path %>
-<%end%>
-
-<%if current_user%>
-  <%if current_user.profile.nil? %>
-    <%=link_to 'Create my profile', new_user_profile_path(current_user)%>
-  <%else%>
-    <%=link_to 'Update my profile', edit_profile_path(user_id = current_user.id, id = current_user.profile)%>
-  <%end%>
 <%end%>
 
 <h1>My Noodle Group</h1>
@@ -19,7 +9,7 @@ new noodle path
     <%if user == current_user%>
       <input type = 'submit' value = "Me">
     <%else%>
-      <input type = 'submit' value = "<%=user.email%>">
+      <input type = 'submit' value = "<%=user.username%>">
     <%end%>
   </form>
 <%end%>

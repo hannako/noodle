@@ -23,7 +23,11 @@ class ProfileController < ApplicationController
   end
 
   def show
-    @profile = current_user.profile
+    if current_user.profile
+      @profile = current_user.profile
+    else
+      @profile = Profile.new
+    end
   end
 
 end

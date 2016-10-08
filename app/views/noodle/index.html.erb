@@ -1,16 +1,16 @@
 <div class = "container">
 
-  <h1>Welcome to Noodle</h1>
+  <h1>Noodle is a group address book</h1>
 
     <div class = "jumbotron">
       <h2>Already a Noodler?</h2>
-      <%= link_to 'Log in as user', new_user_session_path %>
-      <%= link_to 'Log in as admin', new_admin_session_path %>
-    </div>
+      <h3><%= link_to 'Log in as user', new_user_session_path, class: "link" %></h3>
+      <h3><%= link_to 'Log in as admin', new_admin_session_path, class: "link"%></h3>
 
-    <div class = "jumbotron">
+
+
       <h2>New to Noodle?</h2>
-      <%= link_to 'Create a Noodle Group', new_admin_registration_path %>
+      <h3><%= link_to 'Create a Noodle Group', new_admin_registration_path, class: "link" %></h3>
     </div>
 
 </div>
