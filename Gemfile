@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise',           '~> 4.2'
 gem 'devise_invitable', '~> 1.7.0'
+gem 'groupify'
 
 
 # Use ActiveModel has_secure_password
