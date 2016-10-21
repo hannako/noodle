@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005194241) do
+ActiveRecord::Schema.define(version: 20161012165348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 20161005194241) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.string   "username"
+    t.string   "Groupname"
+    t.string   "groupname"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
@@ -44,6 +47,23 @@ ActiveRecord::Schema.define(version: 20161005194241) do
   add_index "admins", ["invitations_count"], name: "index_admins_on_invitations_count", using: :btree
   add_index "admins", ["invited_by_id"], name: "index_admins_on_invited_by_id", using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "admin_id"
+  end
+
+  add_index "groups", ["admin_id"], name: "index_groups_on_admin_id", using: :btree
+
+  create_table "groups_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "group_id"
+  end
+
+  add_index "groups_users", ["group_id"], name: "index_groups_users_on_group_id", using: :btree
+  add_index "groups_users", ["user_id"], name: "index_groups_users_on_user_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "address_line_one"
@@ -80,13 +100,19 @@ ActiveRecord::Schema.define(version: 20161005194241) do
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
     t.string   "username"
+    t.integer  "group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["group_id"], name: "index_users_on_group_id", using: :btree
   add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
   add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "groups", "admins"
+  add_foreign_key "groups_users", "groups"
+  add_foreign_key "groups_users", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "users", "groups"
 end

@@ -1,4 +1,5 @@
-<%= form_for @profile, url: {action: "update"} do |f| %>
+<div class = "border-form-div">
+  <%= form_for @profile, url: {action: "update"} do |f| %>
   <div class="field">
     <%= f.label :address_line_one %>
     <%= f.text_field :address_line_one %>
@@ -21,3 +22,4 @@
   </div>
   <%= f.submit "Update" %>
 <%end%>
+</div>

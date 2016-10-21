@@ -3,6 +3,7 @@ class InvitationsController < Devise::InvitationsController
   before_filter :update_sanitized_params, only: :update
 
   # PUT /resource/invitation
+
   def update
     respond_to do |format|
       format.js do

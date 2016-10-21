@@ -11,28 +11,28 @@
 </head>
 <body>
   <div class = "container">
+    <div class = "header">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <nav class="navbar-default">
-      <%=link_to 'Noodle', root_path, {:class=>"logo" } %>
-          <div class="navbar-right">
-            <%if user_signed_in? %>
-              Welcome <%=current_user.username%>
-              <%=link_to 'My profile', profile_path(current_user) %>
-              <%=link_to 'My group', new_noodle_path%>
-              <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
-
-          </div>
-
-            <%end%>
-            <%if admin_signed_in? %>
-              <div class="navbar">
-                <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
-                Welcome <%=current_admin.email%>
-              </div>
-            <%end%>
-    </nav>
+      <nav class="navbar-default">
+        <%=link_to 'Noodle', root_path, {:class=>"logo" } %>
+            <div class="navbar-right">
+              <%if user_signed_in?%>
+                Welcome <%=current_user.username%>
+                |<%=link_to  ' My profile ', profile_path(current_user), id: "nav_profile", class: "link" %>|
+                <%=link_to ' My group ', new_noodle_path, id: "nav_group", class: "link"%>|
+                <%= link_to ' Sign out ', destroy_user_session_path, class: "link", method: :delete%>
+              <%end%>
+              <%if admin_signed_in? %>
+                  Welcome <%=current_admin.username%>
+                  |<%=link_to  ' My profile ', profile_path(current_admin), id: "nav_profile", class: "link" %>
+                  |<%=link_to ' My group ', new_noodle_path, id: "nav_group", class: "link"%>
+                  |<%= link_to 'Sign out |', destroy_admin_session_path, class: "link", method: :delete %>
+              <%end%>
+            </div>
+      </nav>
+    </div>
     <%= yield %>
 
   </div>

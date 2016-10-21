@@ -4,10 +4,15 @@ Rails.application.routes.draw do
 }
   devise_for :admins
 
+  resources :admins do
+    resources :group
+  end
+
   resources :noodle do
     resources :users, shallow: true do
       resources :profile
     end
+
 
   end
 

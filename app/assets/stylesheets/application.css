@@ -14,37 +14,51 @@
  *= require_self
  */
 
-body {
-  background: url(flowers.jpeg);
-  background-size: cover;
-}
+
 
 h1 {
-  font-size: 90px;
-  text-align: center;
+  font-size: 70px;
   padding-bottom: 0px;
-  font-family: "Raleway dots";
-  color: white;
-  background-color: rgba(12,12,12,0.5);
-
+  font-family: "Raleway";
+  color: purple;
+  /*background-color: rgba(12,12,12,0.3);*/
 }
 
 h2 {
   font-size: 40px;
   font-family: "Raleway";
   /*color: #af8dc3;;*/
-  color: white;
+  color: purple;
 }
 
 h3 {
   font-size: 20px;
   font-family: "Bitter";
-  color: white;
+  color: purple;
 }
 
+h4 {
+  font-size: 15px;
+  font-family: "Bitter";
+  color: purple;
+}
+
+.address {
+  width: 50%;
+  margin-left: 40%;
+}
+
+.center{
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
 .alert{
   font-family: "Raleway";
-  font-size: 15px;
+  font-size: 20px;
   color: white;
   text-align: center;
 }
@@ -56,52 +70,110 @@ h3 {
   text-align: center;
 }
 
-.jumbotron{
-  background-color: rgba(12,12,12,0.3);
 
-  /*border-style: dotted;*/
+.homepage_sign_in{
+  margin-top: 50px;
+}
+
+.jumbotron{
+  margin-top: 10px;
   width: auto;
 }
 
-
 .logo{
-  font-family: "Raleway dots";
+  font-family: "Raleway";
   font-size: 40px;
   padding-right: 100px;
   padding-left: 20px;
-  color:#A08A1E;
+  color: yellow;
+  padding-bottom: 20px;
+  vertical-align: top;
+}
+
+.header{
+  background: url(flowers.jpeg);
+  background-size: cover;
+  width: inherit;
+}
 
 
-
-
+.navbar-default{
+  background-color: rgba(12,12,12,0.3);
+  height: 100%;
+  padding-right: 30px;
+  margin-top: 15px;
+  padding-top: 20px;
+  color: white;
+  font-family: "Raleway";
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 .navbar-right{
   text-align: right;
-  padding-right: 30px;
-  margin-top: 15px;
-  padding-bottom: 10px;
-  color: black;
-  font-family: "Raleway Dots";
-  font-size: 20px;
-  color: black;
-  letter-spacing: 1px;
-  font-weight: bolder;
 }
 
 
 .button {
   font-family: 'Bitter';
   background-color:  #af8dc3;
+}
+.group_member_button {
+  font-family: 'Bitter';
+  font-size: 30px;
+  background-color:  #af8dc3;
+  margin: 10px 10px 10px 10px;
+}
+
+.group_display {
+  width: 80%;
+  margin: 10%;
+}
+
+#profile #nav_profile,
+#group #nav_group
+ {
+  text-decoration: bold;
+  color: yellow;
+}
+
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: inherit;
 
 }
 
-.link, .link:hover {
-    text-decoration: none;
-    color: white;
-}
 
 /* forms */
-.field {
-  font-size: 30px;
+.border-form-div {
+  font-family: 'Bitter';
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin:0 auto;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
 }

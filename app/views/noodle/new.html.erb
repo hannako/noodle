@@ -1,15 +1,7 @@
-<%if admin_signed_in? %>
-  <%= link_to 'Send Invitation', new_user_invitation_path %>
-<%end%>
-
-<h1>My Noodle Group</h1>
-
-<% @users.each do |user| %>
-  <form action = "<%=user_path(user)%>", method = 'get'>
-    <%if user == current_user%>
-      <input type = 'submit' value = "Me">
-    <%else%>
-      <input type = 'submit' value = "<%=user.username%>">
-    <%end%>
-  </form>
-<%end%>
+<body id = "group">
+  <%if admin_signed_in?%>
+    <%=render 'admin_home' %>
+  <%else%>
+    <%=render 'user_home' %>
+  <%end%>
+</body>

@@ -8,6 +8,23 @@
 
 
 
-# Admin.create(email: 'admin@gmail.co.uk',
-#             password: "admin1234",
-#             password_confirmation: "admin1234")
+Admin.create(username: 'JessAdmin',
+            email: 'admin@gmail.co.uk',
+            password: "admin1234",
+            password_confirmation: "admin1234")
+
+
+User.create(username: 'Katie',
+            email: 'katie@test.co.uk',
+            password: "katie1234",
+            password_confirmation: "katie1234")
+
+User.create(username: 'Susan',
+            email: 'susan@test.co.uk',
+            password: "susan1234",
+            password_confirmation: "susan1234")
+
+User.create(username: 'Charlie',
+            email: 'charlie@test.co.uk',
+            password: "charlie1234",
+            password_confirmation: "charlie1234")

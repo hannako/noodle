@@ -1,0 +1,18 @@
+<body id = "group">
+  <div class = "group_display">
+    <%if @users.nil? %>
+        No members yet!
+    <%else%>
+      <% @users.each do |user| %>
+        <%if (user_signed_in?) && (current_user == user ) %>
+          <form action = "<%=profile_path(user)%>", method = 'get'>
+          <input type = 'submit' value = "Me" = class = "group_member_button">
+        <%else%>
+          <form action = "<%=user_path(user)%>", method = 'get'>
+          <input type = 'submit' value = "<%=user.username%>" class = "group_member_button">
+        <%end%>
+        </form>
+      <%end%>
+    <%end%>
+  </div>
+</body>
