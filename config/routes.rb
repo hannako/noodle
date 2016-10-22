@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :admins do
     resources :group
+    resources :profile
   end
 
   resources :noodle do

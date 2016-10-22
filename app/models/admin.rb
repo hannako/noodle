@@ -5,4 +5,5 @@ class Admin < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   include DeviseInvitable::Inviter
   has_many :groups
+  has_one :profile
 end

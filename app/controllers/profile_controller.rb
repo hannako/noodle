@@ -23,8 +23,10 @@ class ProfileController < ApplicationController
   end
 
   def show
-    if current_user.profile
+    if user_signed_in? && current_user.profile
       @profile = current_user.profile
+    elsif admin_signed_in? && current_admin.profile
+      @profile = current_admin.profile
     else
       @profile = Profile.new
     end

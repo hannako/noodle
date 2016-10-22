@@ -7,8 +7,8 @@ class NoodleController < ApplicationController
 
   def new
     if admin_signed_in?
-      @users =  User.find_by(:invited_by_id=>current_admin.id)
-      @users.compact
+      @users = []
+      @users <<  User.find_by(:invited_by_id=>current_admin.id)
     else
       @users = User.all
       @users.compact

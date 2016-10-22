@@ -1,0 +1,18 @@
+<body id = "profile">
+<%if (@profile.address_line_one.nil?) && (@profile.address_line_two.nil?)%>
+
+  <%=button_to 'Create my profile', new_user_profile_path(current_user), :method=>:get, :class=>'button'%>
+
+<%else%>
+  <div class = "address">
+
+    <h3><%=@profile.address_line_one%></h3>
+    <h3><%=@profile.address_line_two%></h3>
+    <h3><%=@profile.address_line_three%></h3>
+    <h3><%=@profile.address_post_code%></h3>
+    <h3>My birthday is: <%=@profile.birthday%></h3>
+    <%=button_to 'Update my details', edit_profile_path(@profile), :method=>:get, :class=>'button'%>
+
+  </div>
+<%end%>
+</body>
